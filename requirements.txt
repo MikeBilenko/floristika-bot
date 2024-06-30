@@ -1,0 +1,6 @@
+psycopg2-binary
+decouple==0.0.7
+aiogram==3.8.0
+python-dotenv
+asyncpg
+pyTelegramBotAPI

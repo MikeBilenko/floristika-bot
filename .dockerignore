@@ -1,0 +1,26 @@
+# Ignore development and editor-specific files
+.git
+.gitignore
+.vscode
+.idea
+
+# Ignore virtual environment
+venv
+.env
+.env.*
+
+# Ignore Python cache and bytecode files
+__pycache__
+*.pyc
+
+# Ignore local development settings
+*.log
+*.sqlite3
+
+# Ignore Docker specific files
+.dockerenv
+
+# Ignore build artifacts
+*.egg-info
+dist
+build
