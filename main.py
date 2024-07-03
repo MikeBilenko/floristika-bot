@@ -77,7 +77,7 @@ async def process_support_button(callback_query: types.CallbackQuery):
         f"New support request from "
         f"{callback_query.from_user.full_name} "
         f"{callback_query.from_user.last_name if callback_query.from_user.last_name else ''}.")
-
+    await callback_query.message.answer("<a href='https://t.me/floristika_assistant_bot'>@floristika_assistant_bot</a>")
 
 @router.callback_query(lambda query: query.data == "stores")
 async def get_stores_data(callback_query: types.CallbackQuery):
@@ -129,6 +129,7 @@ async def back_to_previous_state(callback_query: types.CallbackQuery, state: FSM
         f"{messages[language]['select']}: ",
         reply_markup=keyboards.get_main_kb(user_id)
     )
+
 
 @router.callback_query(lambda query: query.data == "back_product")
 async def back_to_previous_state_product(callback_query: types.CallbackQuery, state: FSMContext):
@@ -308,6 +309,7 @@ async def main() -> None:
     dp.include_routers(
         router,
     )
+    await bot.delete_webhook()
     await dp.start_polling(bot)
 
 
